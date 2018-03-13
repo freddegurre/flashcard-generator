@@ -1,5 +1,7 @@
 var Basic = require("./BasicCard.js");
 var Cloze = require("./ClozeCard.js");
+var inquirer = require("inquirer");
+
 
 //all cards
 var card1 = new Basic("What is the name of the Swedish King?", "Carl Gustaf"); 
@@ -14,5 +16,14 @@ var card9 = new Cloze("The world-famous discount furniture chain IKEA was founde
 var card10 = new Cloze("Swedes have the longest life expectancy in Europe", "life expectancy"); 
 
 
-console.log(card9); 
 //put al cards in a array, loop over arary, if their input matches the backside/ missing card then give one point. 
+//try to put this in for loop so it does this for every card. and checks if the answer is correct. 
+inquirer.prompt([
+    {
+        type: "input",
+        message: card9.partial,
+        name: "answer"
+    }
+]).then(function(input){
+    console.log(input.answer); 
+})
