@@ -88,7 +88,11 @@ function askQuestion() {
                 askQuestion(); 
             }
             if (counter === allCards.length) {
+                console.log("-----------");
                 console.log("Nice work!  You answered " + right + " questions right!")
+                console.log("-----------");
+                
+
             }
         })
     }
