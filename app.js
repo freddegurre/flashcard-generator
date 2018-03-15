@@ -29,6 +29,8 @@ allCards.push(card10);
 console.log("This is a flashcard game about Sweden, your answers must be in lowecase :) Good luck!")
 
 var counter = 0; 
+var right = 0; 
+var wrong = 0; 
  
 // Game logic, There are two types of cards, Cloze and Basic. In the constructor for each type i have set i flag for so i can run different inquirer depending on type. The game will keep going untill there are no more questions. 
 function askQuestion() {
@@ -46,12 +48,14 @@ function askQuestion() {
                 console.log("-----------");
                 console.log("Your answer " + input.answer + " was right"); 
                 console.log("-----------");
+                right++;
             }
             
             else {
                 console.log("-----------");
                 console.log("Wrong the right answer was || " + allCards[counter].back); 
-                console.log("-----------"); 
+                console.log("-----------");
+                wrong++;
             }
             counter++; 
             if (counter < allCards.length) {
@@ -71,15 +75,20 @@ function askQuestion() {
                 console.log("-----------");
                 console.log("Well done! " + input.answer + " is right");
                 console.log("-----------");
+                right++; 
              }
             else {
                 console.log("-----------");
                 console.log("Wrong the right answer was || " + allCards[counter].cloze)
                 console.log("-----------");
+                wrong++;
             }
             counter++; 
             if (counter < allCards.length) {
                 askQuestion(); 
+            }
+            if (counter === allCards.length) {
+                console.log("Nice work!  You answered " + right + " questions right!")
             }
         })
     }
