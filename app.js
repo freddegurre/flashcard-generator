@@ -26,7 +26,7 @@ allCards.push(card9);
 var card10 = new Cloze("Swedes have the longest life expectancy in Europe", "life expectancy");
 allCards.push(card10);
 
-console.log("This is a flashcard game about Sweden, your answers must be in lowecase :) Good luck!")
+console.log("This is a flashcard game about Sweden, your answers must be in lowercase :) Good luck!")
 
 var counter = 0;
 var right = 0;
